@@ -8,7 +8,7 @@ pipeline{
         }
         stage("test in Sonarqube"){
             steps{
-                withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'sonarqube token') {
+                withSonarQubeEnv('sonarqube') {
                     sh "${ tool ("sonarqube scanner")}/sonar-scanner \
                         -Dproject.settings=sonar-scanner.properties"
                 }
