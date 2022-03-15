@@ -9,7 +9,7 @@ pipeline{
         stage("test in Sonarqube"){
             steps{
                 withSonarQubeEnv('sonarqube') {
-                    sh "${ tool ("sonar-scanner")}/sonar-scanner \
+                    sh "${ tool ("sonarqube scanner")}/sonar-scanner \
                         -Dproject.settings=sonar-scanner.properties"
                 }
             }
